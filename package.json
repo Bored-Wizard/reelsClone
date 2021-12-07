@@ -2,7 +2,7 @@
   "name": "webapp",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://bored-wizard.github.io/reelsCLone",
+  "homepage": "http://Bored-Wizard.github.io/reelsCLone/",
   "dependencies": {
     "@craco/craco": "^6.4.1",
     "@testing-library/jest-dom": "^5.15.0",

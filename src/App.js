@@ -11,21 +11,21 @@ const App = () => {
       link: "https://www.w3schools.com/html/mov_bbb.mp4",
       hide: true
     },
-    1: {
-      shouldPlay: false,
-      link: "/assets/1.mp4",
-      hide: true
-    },
-    2: {
-      shouldPlay: false,
-      link: "/assets/2.mp4",
-      hide: true
-    },
-    3: {
-      shouldPlay: false,
-      link: "/assets/3.mp4",
-      hide: true
-    },
+    // 1: {
+    //   shouldPlay: false,
+    //   link: "/assets/1.mp4",
+    //   hide: true
+    // },
+    // 2: {
+    //   shouldPlay: false,
+    //   link: "/assets/2.mp4",
+    //   hide: true
+    // },
+    // 3: {
+    //   shouldPlay: false,
+    //   link: "/assets/3.mp4",
+    //   hide: true
+    // },
 
 
   })
