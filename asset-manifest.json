@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/reelsCLone/static/css/main.bf70d029.chunk.css",
+    "main.js": "/reelsCLone/static/js/main.a8fa38bd.chunk.js",
+    "runtime-main.js": "/reelsCLone/static/js/runtime-main.3b6e551a.js",
+    "static/js/2.698ca6a9.chunk.js": "/reelsCLone/static/js/2.698ca6a9.chunk.js",
+    "static/js/3.b0fc9f19.chunk.js": "/reelsCLone/static/js/3.b0fc9f19.chunk.js",
+    "index.html": "/reelsCLone/index.html",
+    "static/js/2.698ca6a9.chunk.js.LICENSE.txt": "/reelsCLone/static/js/2.698ca6a9.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3b6e551a.js",
+    "static/js/2.698ca6a9.chunk.js",
+    "static/css/main.bf70d029.chunk.css",
+    "static/js/main.a8fa38bd.chunk.js"
+  ]
+}
