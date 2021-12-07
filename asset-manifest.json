@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/reelsCLone/static/css/main.bf70d029.chunk.css",
-    "main.js": "/reelsCLone/static/js/main.a8fa38bd.chunk.js",
+    "main.js": "/reelsCLone/static/js/main.1dd33f76.chunk.js",
     "runtime-main.js": "/reelsCLone/static/js/runtime-main.3b6e551a.js",
     "static/js/2.698ca6a9.chunk.js": "/reelsCLone/static/js/2.698ca6a9.chunk.js",
     "static/js/3.b0fc9f19.chunk.js": "/reelsCLone/static/js/3.b0fc9f19.chunk.js",
@@ -12,6 +12,6 @@
     "static/js/runtime-main.3b6e551a.js",
     "static/js/2.698ca6a9.chunk.js",
     "static/css/main.bf70d029.chunk.css",
-    "static/js/main.a8fa38bd.chunk.js"
+    "static/js/main.1dd33f76.chunk.js"
   ]
 }
