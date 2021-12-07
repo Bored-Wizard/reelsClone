@@ -11,21 +11,21 @@ const App = () => {
       link: "https://www.w3schools.com/html/mov_bbb.mp4",
       hide: true
     },
-    // 1: {
-    //   shouldPlay: false,
-    //   link: "/assets/1.mp4",
-    //   hide: true
-    // },
-    // 2: {
-    //   shouldPlay: false,
-    //   link: "/assets/2.mp4",
-    //   hide: true
-    // },
-    // 3: {
-    //   shouldPlay: false,
-    //   link: "/assets/3.mp4",
-    //   hide: true
-    // },
+    1: {
+      shouldPlay: false,
+      link: "https://www.w3schools.com/html/mov_bbb.mp4",
+      hide: true
+    },
+    2: {
+      shouldPlay: false,
+      link: "https://www.w3schools.com/html/mov_bbb.mp4",
+      hide: true
+    },
+    3: {
+      shouldPlay: false,
+      link: "https://www.w3schools.com/html/mov_bbb.mp4",
+      hide: true
+    },
 
 
   })
@@ -55,22 +55,22 @@ const App = () => {
   const handlePausePlay = (index, e) => {
     const ele = document.getElementById(index)
     if (ele) {
-      if(e.detail === 1){
+      if (e.detail === 1) {
         ele.children[0].paused ? ele.children[0].play() : ele.children[0].pause()
         if (window.ReactNativeWebView) {
           window.ReactNativeWebView.postMessage()
         }
-      }else if(e.detail === 2){
+      } else if (e.detail === 2) {
         handleLike(String(index))
       }
-      
+
     }
   }
 
   const handleHide = index => {
-    let bufferVideoList = videoList;
-    bufferVideoList[index].hide = false;
-    setvideoList(bufferVideoList)
+    // let bufferVideoList = videoList;
+    // bufferVideoList[index].hide = false;
+    // setvideoList(bufferVideoList)
   }
 
   const handleLike = index => {
@@ -83,7 +83,7 @@ const App = () => {
             window.ReactNativeWebView.postMessage(JSON.stringify({
               type: "like",
               message: "like unClicked",
-              data: {like: false}
+              data: { like: false }
             }))
           }
         } else {
@@ -95,7 +95,7 @@ const App = () => {
                 window.ReactNativeWebView.postMessage(JSON.stringify({
                   type: "dislike",
                   message: "dislike unClicked",
-                  data: {dislike: false}
+                  data: { dislike: false }
                 }))
               }
             }
@@ -105,7 +105,7 @@ const App = () => {
             window.ReactNativeWebView.postMessage(JSON.stringify({
               type: "like",
               message: "like Clicked",
-              data: {like: true}
+              data: { like: true }
             }))
           }
         }
@@ -123,7 +123,7 @@ const App = () => {
             window.ReactNativeWebView.postMessage(JSON.stringify({
               type: "dislike",
               message: "dislike unClicked",
-              data: {dislike: false}
+              data: { dislike: false }
             }))
           }
         } else {
@@ -135,7 +135,7 @@ const App = () => {
                 window.ReactNativeWebView.postMessage(JSON.stringify({
                   type: "like",
                   message: "like unClicked",
-                  data: {dislike: false}
+                  data: { dislike: false }
                 }))
               }
             }
@@ -145,7 +145,7 @@ const App = () => {
             window.ReactNativeWebView.postMessage(JSON.stringify({
               type: "dislike",
               message: "dislike Clicked",
-              data: {dislike: true}
+              data: { dislike: true }
             }))
           }
         }
@@ -199,8 +199,28 @@ const App = () => {
     }
   }
 
+  const [loadingVideo, setloadingVideo] = useState(false)
+  const handleScroll = e => {
+    const { scrollTop, clientHeight, scrollHeight } = e.currentTarget;
+    // console.log(scrollTop, clientHeight, scrollHeight)
+    if (scrollHeight - scrollTop - 65 === clientHeight) {
+      let keyq = Object.keys(videoList).length + 1
+      let bufferVideoList = videoList;
+      bufferVideoList[keyq] = {
+        shouldPlay: false,
+        link: "https://www.w3schools.com/html/mov_bbb.mp4",
+        hide: true
+      }
+      setvideoList(bufferVideoList)
+      setloadingVideo(!loadingVideo)
+    }
+  }
+
+  useEffect(() => {
+
+  }, [videoList, loadingVideo])
   return (
-    <div className="Container noScrollbar">
+    <div className="Container noScrollbar" onScroll={e => handleScroll(e)} >
       {
         Object.values(videoList).map((item, index) => {
           return (
@@ -212,7 +232,7 @@ const App = () => {
               </video>
               <div className="ratingOverlay" >
                 <FaThumbsUp onClick={() => { handleLike(String(index)) }} id={`like${index}`} className="like" size={27} />
-                <FaThumbsDown onClick={() => { handleDislike(String(index))}} id={`dislike${index}`} className="dislike" size={27} />
+                <FaThumbsDown onClick={() => { handleDislike(String(index)) }} id={`dislike${index}`} className="dislike" size={27} />
                 <FaRegComment onClick={() => { handleComment(String(index)) }} id={`comment${index}`} className="comment" size={27} />
                 <FaEllipsisH onClick={() => { handleDescription(String(index)) }} id={`description${index}`} className="description" size={27} />
               </div>
